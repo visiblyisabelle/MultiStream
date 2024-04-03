@@ -7,6 +7,7 @@ contextBridge.exposeInMainWorld("config", {
     joinRoom: (client, room) => ipcRenderer.send("join-room", {client, room}),
     reloadClient: client => ipcRenderer.send("reload-client", client),
     killClient: client => ipcRenderer.send("kill-client", client),
+    unspecClient: client => ipcRenderer.send("unspec-client", client),
     selectReplayDir: () => {
         return new Promise(resolve => {
             ipcRenderer.once("save-folder-set", (e, dir) => resolve(dir));

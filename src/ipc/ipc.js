@@ -59,6 +59,12 @@ export function enableIPC(backgroundWin, configWin) {
 		c.webContents.send("request-status");
 	});
 
+	ipcMain.on("unspec-client", async (event, client) => {
+		const c = getClientByLetter(client);
+
+		await c.webContents.executeJavaScript(`document.getElementById("exit_spectate").click()`);
+	});
+
 	ipcMain.on("kill-client", async (event, client) => {
 		const c = getClientByLetter(client);
 

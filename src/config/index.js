@@ -39,6 +39,14 @@ document.querySelectorAll("[data-client-kill]").forEach(el => {
 	});
 });
 
+document.querySelectorAll("[data-client-unspec]").forEach(el => {
+	el.addEventListener("click", () => {
+		config.unspecClient(el.dataset.clientUnspec);
+	});
+});
+
+
+
 document.querySelectorAll("[data-client-replay]").forEach(el => {
 	el.addEventListener("click", () => {
 		const file = document.querySelector("input[type=file]").files[0];
