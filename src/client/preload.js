@@ -189,7 +189,7 @@ const { ipcRenderer } = require("electron/renderer");
 			p1,
 			p2,
 			players: entries.length,
-			ingame: document.body.classList.contains("inmulti")
+			ingame: document.body.classList.contains("ingame")
 		});
 	}
 
