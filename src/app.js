@@ -16,6 +16,7 @@ app.commandLine.appendSwitch("--enable-high-resolution-time");
 app.commandLine.appendSwitch("--enable-zero-copy");
 app.commandLine.appendSwitch("--ignore-gpu-blacklist");
 app.commandLine.appendSwitch("--autoplay-policy", "no-user-gesture-required");
+app.commandLine.appendSwitch("--disable-backgrounding-occluded-windows");
 
 let backgroundWin;
 let configWin;
