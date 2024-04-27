@@ -290,10 +290,14 @@ const { ipcRenderer } = require("electron/renderer");
 	window.onload = () => {
 		if (getConfig("transparent")) document.documentElement.style.backgroundColor = "transparent";
 
-		document.getElementById("multi_league").style.display = "none"; // prevent silliness
+		// prevent silliness, hide ui elements
+		document.getElementById("multi_league").style.display = "none";
 		document.getElementById("play_solo").style.display = "none";
 		document.getElementById("footer_buttons").style.display = "none";
 		document.getElementById("homebanner").style.display = "none";
+
+		// force siglia trip
+		document.body.classList.add("sigliatrip_idiot");
 
 		autoDownloadObserver.observe(document.getElementById("victoryview"), {
 			attributes: true,
