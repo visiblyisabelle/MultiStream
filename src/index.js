@@ -77,9 +77,9 @@ function createView(index) {
         view.webContents.insertCSS(config.get("css"));
     });
 
-    // block enthusiast gaming ad network
+    // block freestar ad network
     view.webContents.session.webRequest.onBeforeSendHeaders({
-        urls: ["*://*.enthusiastgaming.net/*"]
+        urls: ["*://*.pub.network/*"]
     }, (details, callback) => {
         callback({cancel: config.get("blockads")});
     });
